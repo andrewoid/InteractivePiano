@@ -34,7 +34,7 @@ public class Key
 		}
 	}
 
-	public void play(Color color)
+	public void play()
 	{
 		// change background for as as long as note plays
 		SoundThread s = new SoundThread(position + Notes.C, gui.getChannel()); // pass in pitch to play

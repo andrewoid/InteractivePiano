@@ -43,7 +43,7 @@ public class ClientReceiver extends Thread
 			{
 				// http://stackoverflow.com/questions/2393179/streamcorruptedexception-invalid-type-code-ac
 				packet = (PianoPacket) in.readObject();
-				keys.get(packet.getKeyPosition()).play(packet.getClientColor());
+				keys.get(packet.getKeyPosition()).play();
 			}
 		}
 		catch (SocketException e)

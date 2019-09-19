@@ -37,8 +37,6 @@ public class PianoGUI extends JFrame
 		add(bottom, BorderLayout.CENTER);
 		PianoLabel[] bottomRowLabels = new PianoLabel[13];
 		initializeBottomLabels(bottom, bottomRowLabels);
-
-//		ArrayList<Key> keys = new ArrayList<>();
 		linkLabelsToKeys(topRowLabels, bottomRowLabels, keys);
 
 		setResizable(false);
@@ -149,31 +147,22 @@ public class PianoGUI extends JFrame
 	{
 		try
 		{
-
-			int[] notes = { Notes.C, Notes.D, Notes.E, Notes.F, Notes.G, Notes.A, Notes.B };
-			for (int i = 0; i < notes.length; ++i)
+			for (int i = 0; i < 5; i += 2)
 			{
-				channel.noteOn(notes[i], SoundSettings.VOLUME);
 				Thread.sleep(100);
-				if ( i==0){ keys.get(0).play(Color.WHITE);}
-				else if(i==1){keys.get(2).play(Color.WHITE);}
-				else if(i==2){keys.get(4).play(Color.WHITE);}
-				else if(i==3){keys.get(5).play(Color.WHITE);}
-				else if(i==4){keys.get(7).play(Color.WHITE);}
-				else if(i==5){keys.get(9).play(Color.WHITE);}
-				else if(i==6){keys.get(11).play(Color.WHITE);}
-				channel.noteOff(notes[i]);
-
+				keys.get(i).play();
 			}
+			for (int i = 5; i < 12; i += 2)
+			{
+				Thread.sleep(100);
+				keys.get(i).play();
+			}
+
 			// Play a C major chord.
-			channel.noteOn(Notes.C, SoundSettings.VOLUME);
-			channel.noteOn(Notes.E, SoundSettings.VOLUME);
-			channel.noteOn(Notes.G, SoundSettings.VOLUME);
 			Thread.sleep(3000);
-			keys.get(0).play(Color.WHITE);
-			keys.get(4).play(Color.WHITE);
-			keys.get(7).play(Color.WHITE);
-			channel.allNotesOff();
+			keys.get(0).play();
+			keys.get(4).play();
+			keys.get(7).play();
 			Thread.sleep(500);
 		}
 		catch (InterruptedException e)
