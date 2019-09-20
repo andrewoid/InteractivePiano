@@ -70,6 +70,7 @@ public class PianoGUI extends JFrame
             }
             placement += KeyStats.BLACK_WIDTH + KeyStats.BIG_SPACE_BETWEEN_BLACK_KEYS;
         }
+        root.moveToFront(blackLabels[KeyStats.OCTAVES - 1][KeyStats.NUM_BLACK_KEYS_IN_OCTAVE - 1]);
         return blackLabels;
     }
 

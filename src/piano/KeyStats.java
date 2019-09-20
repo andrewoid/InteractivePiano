@@ -2,7 +2,7 @@ package piano;
 
 public interface KeyStats
 {
-	int FRAME_WIDTH = 750; // TODO fix error where last black get cut off (frame width 750, 2 octaves)
+	int FRAME_WIDTH = 750;
 	int FRAME_HEIGHT = 350;
 
 	int OCTAVES = 3;
